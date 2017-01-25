@@ -1,0 +1,75 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  font: 14px;
+  font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+footer {
+    color: #fff;
+}
+
+footer .footer-below {
+    padding: 10px 0;
+    background-color: #233140;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.encabezado {
+	background-color: #286090;
+	font-size: 3em;
+	padding: 10px;
+}
+
+.cuerpo-central {
+	background-color: #e9ebec;
+}
+
+.box {
+	background: #18BC9C;
+    padding: 10px;
+    border: 1px solid #dbdee0;
+    margin: 10px 0 20px 0;
+}
+
+.box .box-titulo {
+    float: left;
+    overflow: hidden;
+    color: #d9edf7;
+    display: block;
+    padding-left: 5%;
+    padding-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.box .box-puntuacion {
+    float: right;
+    overflow: hidden;
+    color: #d9edf7;
+    display: block;
+    padding-right: 5%;
+    padding-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.box .box-boton {
+    background: #286090;
+    padding: 10px;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}

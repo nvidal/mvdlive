@@ -1,0 +1,35 @@
+<div id="main-content">
+	<div class="container">
+		
+		<div class="row">
+ 			<div class="col-xs-12 text-center encabezado">
+				<div class="title">Boliches cerca</div>						
+			</div>
+		</div>
+		
+
+		<div class="row">
+				<table class=" col-lg-8 col-md-10 col-xs-12 col-lg-offset-2 col-md-offset-1 cuerpo-central">
+				  <tr ng-repeat="b in boliches">
+				    <td class="col-xs-12">
+				    	<div class="box col-xs-12">
+				  			<div class="row">
+					  			<div class="box-titulo">
+							    	<p><strong>{{b.nombre}}</strong></p>
+							    </div>
+							    <div class="box-puntuacion">
+							    	{{b.pts}}
+							    </div>
+							    <div class="box-boton col-xs-12">
+									<button> Estoy aquí!</button>
+								</div>
+							</div>
+						</div>
+					</td>
+				  </tr>
+				</table>
+		</div>
+
+		</div>
+	</div>
+</div>
