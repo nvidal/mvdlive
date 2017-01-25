@@ -1,25 +1,4 @@
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  font: 14px;
-  font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
-  overflow-x: hidden;
-  background-color: #fff;
-}
 
-a {
-  color: #00B7FF;
-}
-
-
-footer {
-    color: #fff;
-}
-
-footer .footer-below {
-    padding: 10px 0;
-    background-color: #233140;
-}
 
 .text-center {
     text-align: center;
@@ -31,9 +10,6 @@ footer .footer-below {
 	padding: 10px;
 }
 
-.cuerpo-central {
-	background-color: #e9ebec;
-}
 
 .box {
 	background: #18BC9C;

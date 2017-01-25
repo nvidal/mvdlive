@@ -10,27 +10,27 @@ app.controller('HomeCtrl', ['$scope','$location',
 		
 		$scope.boliches = [
 			{
-				nombre 	: "Boliche 1",
+				nombre 	: "Nombre 1",
 				pts		: 3.4,
 			},
 			{
-				nombre: "Boliche 3",
+				nombre: "Nombre 2",
 				pts		: 4.4,
 			},
 			{
-				nombre 	: "Boliche 1",
+				nombre 	: "Nombre 3",
 				pts		: 3.4,
 			},
 			{
-				nombre: "Boliche 3",
+				nombre: "Nombre 4",
 				pts		: 4.4,
 			},
 			{
-				nombre 	: "Boliche 1",
+				nombre 	: "Nombre 5",
 				pts		: 3.4,
 			},
 			{
-				nombre: "Boliche 3",
+				nombre: "Nombre 6",
 				pts		: 4.4,
 			}
 		]
