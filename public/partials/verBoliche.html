@@ -1,0 +1,48 @@
+<div class="container">	
+	
+	<div class="row">
+		<div class="card blue-grey darken-1">
+	        <div class="card-content white-text" style="padding: 0px">
+	          	<span class="card-title">
+	          		<div class="row">
+	              		<div class="box-titulo">{{boliche.nombre}}</div>
+				   		<div class="box-puntuacion">{{boliche.pts | number:2}} </div>
+				    </div>
+		    	</span>
+		    	<div class="center">
+			    	<i class="material-icons">phone</i>{{boliche.telefono}}
+			    	<i class="material-icons">room</i>{{boliche.direccion}}
+		    	</div>
+		    	<div class="center">
+		    		<i class="material-icons">info</i>{{boliche.descripcion}}
+		    	</div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+		<div class="card-panel teal" style="padding: 10px;margin: 0rem 0 0.4rem 0;">
+		  <div class="white-text center">
+		  	Valoraciones de otros usuarios
+		  </div>
+		</div>
+	</div>
+		<table>
+			<tr ng-repeat="m in mensajes">
+				<td style="padding: 0px;">
+				      <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+				        <div class="card-panel white" style="padding: 10px;margin: 0rem 0 0.4rem 0;">
+				          <span class="black-text">
+				          	{{m.fecha}} : {{m.mensaje}}
+				          </span>
+				          <span class="right">{{m.pts | number:2}}</span>
+				        </div>
+				      </div>
+				</td>
+			</tr>
+		</table>
+
+	<div class="center">
+		<a class="waves-effect waves-light btn" href="#/">Volver</a>
+	</div>
+</div>

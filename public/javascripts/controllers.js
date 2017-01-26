@@ -5,43 +5,15 @@ app.controller('HeaderController', ['$scope','$location',
 		};
 	}]);
 
-app.controller('HomeCtrl', [ '$scope','$location', 
- 	function($scope, $location) {
+app.controller('HomeCtrl', [ '$scope','$location', '$resource',
+ 	function($scope, $location, $resource) {
 		
-		$scope.boliches = [
-			{
-				nombre 	: "Nombre 1",
-				pts		: 3.4,
-			},
-			{
-				nombre: "Nombre 2",
-				pts		: 4.4,
-			},
-			{
-				nombre 	: "Nombre 3",
-				pts		: 3.4,
-			},
-			{
-				nombre: "Nombre 4",
-				pts		: 4.4,
-			},
-			{
-				nombre 	: "Nombre 5",
-				pts		: 3.4,
-			},
-			{
-				nombre: "Nombre 6",
-				pts		: 4.4,
-			},
-			{
-				nombre 	: "Nombre 7",
-				pts		: 3.4,
-			},
-			{
-				nombre: "Nombre 8",
-				pts		: 4.4,
-			}
-		];
+		$scope.boliches = [];
+		var Boliches = $resource('/boliches');
+		Boliches.query(function(boliches){
+			
+			$scope.boliches = boliches;
+		});
 
 		 $scope.loadMore = function() {
 			var last = $scope.boliches[$scope.boliches.length - 1];
@@ -49,4 +21,75 @@ app.controller('HomeCtrl', [ '$scope','$location',
 				$scope.boliches.push(last + i);
 			}
 		};
+	}]);
+
+
+app.controller('BackOfficeCtrl', ['$scope', '$resource', '$location',
+	function($scope, $resource, $location){
+
+		$scope.boliches = [];
+		var Boliches = $resource('/boliches');
+		Boliches.query(function(boliches){
+			
+			$scope.boliches = boliches;
+		});
+
+
+
+	}]);
+
+// ALTA DE Boliches
+app.controller('AltaCtrl', ['$scope', '$resource', '$location', 
+	function($scope, $resource, $location){
+
+		$scope.modo ="alta";
+
+		$scope.bolicheForm = function(isValid){
+
+			if (isValid){
+				var Boliches = $resource('/boliches/alta');
+				Boliches.save($scope.bolicheEdicion, function(boliche){
+					//alert('Boliche dado de alta con exito! '+ boliche.nombre);
+					//$location.path('/editar/'+func._id);
+					$scope.modo ="editar";
+				});
+			}
+			else{
+				$scope.showErrors = true;
+			}
+		};
+	}]);
+
+// CONTROLLER VER 
+app.controller('VerBolicheCtrl', ['$scope', '$resource', '$location', '$routeParams',
+	function($scope, $resource, $location, $routeParams){
+
+		$scope.modo = "editar";
+		var Boliche = $resource('/boliches/:id');
+		Boliche.get({ id: $routeParams.id }, function(boliche){
+			$scope.boliche = boliche;
+		});
+		
+		$scope.mensajes = [
+		{ 	mensaje: "una poronga no vengan",
+			pts: 1,
+			fecha: "13/7/2017"
+		},
+		{ 	mensaje: "Ha estado mejor. pero bueno es lo que hay hoy.",
+			pts: 2,
+			fecha: "13/7/2017"
+		},
+		{ 	mensaje: "Para un domingo a las 3 de la tarde, esto está muy bien.",
+			pts: 3,
+			fecha: "13/7/2017"
+		},
+		{ 	mensaje: "Saludos a la radio.",
+			pts: 2,
+			fecha: "13/7/2017"
+		},
+		{ 	mensaje: "Los de las balconeras, todos putos.",
+			pts: 1,
+			fecha: "13/7/2017"
+		}];
+
 	}]);

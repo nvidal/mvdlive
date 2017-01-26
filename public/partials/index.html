@@ -1,50 +1,62 @@
-<div id="main-content">
-	<div class="container">
-		
-		<div class="row">
- 			<div class="col-xs-12 text-center encabezado">
-				<div class="title">Titulos NNNNNN</div>						
-			</div>
+<div class="container">	
+	<div class="row">
+			<div class="col s12 text-center encabezado">
+			<div class="title">Boliches</div>						
 		</div>
-		
+	</div>
+	
 
-		<div class="row">
-			<table class=" col-lg-8 col-md-10 col-xs-12 col-lg-offset-2 col-md-offset-1 cuerpo-central">
-			  <!--tr ng-repeat="b in boliches">
-			    <td class="col-xs-12">
-			    	<div class="box col-xs-12">
-			  			<div class="row">
-				  			<div class="box-titulo">
-						    	<p><strong>{{b.nombre}}</strong></p>
-						    </div>
-						    <div class="box-puntuacion">
-						    	{{b.pts}}
-						    </div>
-						    <div class="box-boton col-xs-12">
-								<button> Estoy aquí!</button>
-							</div>
+	<div class="row">
+		<table class=" col l8 m10 s12 offset-l2 offset-m1">
+		  <!--tr ng-repeat="b in boliches">
+		    <td class="col-xs-12">
+		    	<div class="box col-xs-12">
+		  			<div class="row">
+			  			<div class="box-titulo">
+					    	<p><strong>{{b.nombre}}</strong></p>
+					    </div>
+					    <div class="box-puntuacion">
+					    	{{b.pts}}
+					    </div>
+					    <div class="box-boton col-xs-12">
+							<button> Estoy aquí!</button>
 						</div>
 					</div>
-				</td>
-			  </tr-->
-			  <!--div infinite-scroll='loadMore()' infinite-scroll-distance='2'-->
-			  	<tr ng-repeat="b in boliches">
-				  	<td style="padding: 0px">
-					  	<div class="card blue-grey darken-1">
-				            <div class="card-content white-text">
-				              <span class="card-title">{{b.nombre}} - {{b.pts}}</span>
-				            </div>
-				            <div class="card-action">
-				              <a href="#">Ver</a>
-				              <a href="#">Puntuar</a>
-				            </div>
-				        </div>
-				  	</td>
-			  	</tr>
-			  
-			</table>
-		</div>
+				</div>
+			</td>
+		  </tr-->
+		  <!--div infinite-scroll='loadMore()' infinite-scroll-distance='2'-->
+		  	<tr ng-repeat="b in boliches">
+			  	<td style="padding: 0px">
+				  	<div class="card blue-grey darken-1">
+			            <div class="card-content white-text" style="padding: 0px">
+			              	<span class="card-title">
+			              		<div class="row">
+				              		<div class="box-titulo">{{b.nombre}}</div>
+							   		<div class="box-puntuacion">{{b.pts | number:2}}</div>
+							    </div>
+					    	</span>
+			            </div>
+			            <div class="card-action text-center" style="padding: 5px;">
+			              <a href="#/verBoliche/{{b._id}}">Ver</a>
+			              <a href="#" >Puntuar</a>
+			            </div>
+			        </div>
+			  	</td>
+		  	</tr>
+		  
+		</table>
 
-		</div>
+		<div class="card blue-grey darken-1" ng-hide="boliches.length > 0">
+            <div class="card-content white-text">
+              	<span class="card-title">
+              		<div class="text-center">
+              			Ups en este momento no hay boliches!
+              		</div>
+		    	</span>
+            </div>
+        </div>
+	</div>
+
 	</div>
 </div>
